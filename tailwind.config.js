@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        karla: "karla",
+        ubuntu: "ubuntu",
+       custom: ["Open Sans", "sans-serif"],
+       Raleway: ["Raleway", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }

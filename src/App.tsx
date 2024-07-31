@@ -1,52 +1,48 @@
-// import React from 'react'
-import data from "./data"
+import Clients from "./Content/client";
+import clientsElements from "./data"
+import Landing from "./Content/landing/landingPage";
+import FeaturesLayout from "./Content/features/featureContent";
+import featuresElements from "./feature"
+import AboutLayout from "./Content/About/about";
+import aboutElements from "./about"
+import GalleryLayout from "./Content/gallery/gallery";
+import galleryElements from "./gallery";
 
-type info = {
-  img:string,
-  description: string,
-  names:string
-}
+const {titleClient, lineClient, messages} = clientsElements
+const {title, line, features} = featuresElements
+const {imgAbout, titleAbout, lineAbout, describe, question, responses} = aboutElements
+const {titleGallery, lineGallery, descriptionGallery, images} = galleryElements
 
-function MyClients({img, description, names}: info){
-  return(
-    <>
-    <div className="flex gap-2">
-      <img src={img} className="rounded-full h-[40px]" alt="John Doe's"/>
-      <div className="flex flex-col gap-2">
-        <p className="font-light">{description}</p>
-        <p>- {names}</p>
-      </div>
-    </div>
-    </>
-  )
-}
-
-
-export default function App() {
-  const clientData = data.map(el => {
-    return <MyClients 
-    key={el.id}
-    img={el.img}
-    description={el.description}
-    names={el.names}
-    />
-
-  })
-
+export default function App(){
   return (
     <>
-      <div className="mt-2 mx-auto">
-        <p className="text-3xl font-semibold text-center font-mono">WHAT OUR CLIENTS SAY</p>
-        <p className="border-2 border-blue-500 w-[30px]"></p>
-        <div className="grid grid-cols-3 gap-10 w-[900px] mt-5 mx-auto">
-        {clientData} 
+    <Landing />
+    <FeaturesLayout 
+    title = {title}
+    line = {line}
+    features={features}/>
 
-        </div>
-        
-      </div>
-       
+    <AboutLayout 
+    imgAbout={imgAbout}
+    titleAbout={titleAbout}
+    lineAbout={lineAbout}
+    describe={describe}
+    question={question}
+    responses={responses}
+    />
+
+    <GalleryLayout 
+    titleGallery={titleGallery}
+    lineGallery={lineGallery}
+    descriptionGallery={descriptionGallery}
+    images={images}
+    />
+    <Clients 
+    titleClient={titleClient}
+    lineClient={lineClient}
+    messages={messages}
+    />
+
     </>
   )
 }
-
-

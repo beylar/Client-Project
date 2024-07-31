@@ -1,4 +1,7 @@
-const data = [
+export default{
+    titleClient: "What our clients say",
+    lineClient: "",
+    messages:[
     {
         id:1,
         img: "./01.jpg",
@@ -36,5 +39,5 @@ const data = [
         names: "John Doe"
     }
 ]
+}
 
-export default data;
